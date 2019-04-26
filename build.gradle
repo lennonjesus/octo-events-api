@@ -5,6 +5,11 @@ plugins {
 group 'com.lennonjesus.jaya'
 version '0.0.1-SNAPSHOT'
 
+jar {
+    baseName = 'octo-events-api'
+    version = '0.0.1-SNAPSHOT'
+}
+
 repositories {
     mavenCentral()
 }
