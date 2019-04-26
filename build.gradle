@@ -5,11 +5,6 @@ plugins {
 group 'com.lennonjesus.jaya'
 version '0.0.1-SNAPSHOT'
 
-jar {
-    baseName = 'octo-events-api'
-    version = '0.0.1-SNAPSHOT'
-}
-
 repositories {
     mavenCentral()
 }
@@ -19,6 +14,19 @@ dependencies {
     compile 'io.javalin:javalin:2.8.0'
     compile 'org.slf4j:slf4j-simple:1.7.26'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
+}
+
+jar {
+    baseName = 'octo-events-api'
+    version = '0.0.1-SNAPSHOT'
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.lennonjesus.jaya.octoevents.AppKt'
+        )
+    }
+
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
 compileKotlin {
