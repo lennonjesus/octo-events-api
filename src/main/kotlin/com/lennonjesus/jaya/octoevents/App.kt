@@ -20,6 +20,9 @@ fun main() {
     app.routes {
         get("/issues") { ctx -> ctx.json("Hello World") }
         post("/issues") { ctx -> ctx.json("Hello World") }
+        post("/hooks/github") { ctx ->
+            println(ctx.body())
+        }
     }
 
 
