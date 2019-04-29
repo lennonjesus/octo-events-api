@@ -55,6 +55,11 @@ class JavalinApp(private val port: Int) : KoinComponent {
                 get(eventController::listByIssueId)
             }
 
+            // soh pra facilitar a vida...
+            path("events") {
+                get(eventController::list)
+            }
+
         }
 
 

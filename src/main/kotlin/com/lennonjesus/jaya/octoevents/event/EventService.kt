@@ -12,4 +12,8 @@ class EventService(private val eventRepository: EventRepository) : KoinComponent
         return eventRepository.listByIssueId(issueId)
     }
 
+    fun list(): List<Event> {
+        return eventRepository.list()
+    }
+
 }

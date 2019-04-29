@@ -81,4 +81,12 @@ class EventRepository(private val dataSource: DataSource) : KoinComponent {
         }
     }
 
+    fun list(): List<Event> {
+        return transaction(Database.connect(dataSource)) {
+            Events.join(Issues, JoinType.INNER, additionalConstraint = { Events.issue eq Issues.id })
+                .selectAll()
+                .map { Events.toDomain(it, Issues.toDomain(it)) }
+        }
+    }
+
 }

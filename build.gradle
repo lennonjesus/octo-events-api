@@ -41,10 +41,10 @@ dependencies {
     compile "com.h2database:h2:$h2_version"
     
 
-    testImplementation("org.junit.jupiter:junit-jupiter:$junit_version")
+    testImplementation "org.junit.jupiter:junit-jupiter:$junit_version" 
     testImplementation "org.koin:koin-test:$koin_version"
 
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:$junit_version")
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:$junit_version"
 }
 
 jar {
