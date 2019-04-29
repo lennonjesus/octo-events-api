@@ -1,3 +1,6 @@
 package com.lennonjesus.jaya.octoevents.event
 
-data class Event(var id: Int? = null, var action : String? = null)
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+
+@JsonIgnoreProperties(ignoreUnknown=true)
+data class Event(var action : String, var issue: Issue)

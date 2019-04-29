@@ -4,8 +4,16 @@ import io.javalin.Context
 
 class EventController(private val eventService: EventService) {
 
-    fun list(ctx: Context) {
-        ctx.json(eventService.list())
+    fun save(ctx: Context) {
+        eventService.save(ctx.body<Event>()).apply {
+            ctx.status(201).json(mapOf("status" to "Successful created"))
+        }
+    }
+
+    fun listByIssueId(ctx: Context) {
+        ctx.json(eventService.listByIssueId(
+            ctx.pathParam("id").toInt()
+        ))
     }
 
 }
