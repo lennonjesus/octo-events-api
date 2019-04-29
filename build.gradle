@@ -44,7 +44,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:$junit_version")
     testImplementation "org.koin:koin-test:$koin_version"
 
-    testRuntime('org.junit.jupiter:junit-jupiter-engine:$junit_version')
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:$junit_version")
 }
 
 jar {
@@ -53,7 +53,7 @@ jar {
     manifest {
         attributes(
                 'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-                'Main-Class': '$mainClassName'
+                'Main-Class': "$mainClassName"
         )
     }
 
