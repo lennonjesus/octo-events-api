@@ -7,3 +7,6 @@ out
 *.iws
 .env
 .DS_Store
+bin
+local.properties
+.DS_Store
