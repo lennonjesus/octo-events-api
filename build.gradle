@@ -15,6 +15,9 @@ ext {
     khttp_version = "0.1.0"
     koin_version = "2.0.0-rc-2"
     junit_version = "5.4.2"
+    exposed_version = "0.13.6"
+    hikaricp_version = "3.3.0"
+    h2_version = "1.4.197"
 }
 
 repositories {
@@ -31,10 +34,13 @@ dependencies {
     compile "khttp:khttp:$khttp_version"
     compile "khttp:khttp:$khttp_version"
     compile "org.koin:koin-core:$koin_version"
+    compile "org.jetbrains.exposed:exposed:$exposed_version"
+    compile "com.zaxxer:HikariCP:$hikaricp_version"
+    compile "com.h2database:h2:$h2_version"
 
     testImplementation("org.junit.jupiter:junit-jupiter:$junit_version")
     testImplementation "org.koin:koin-test:$koin_version"
-    
+
     testRuntime('org.junit.jupiter:junit-jupiter-engine:$junit_version')
 }
 
