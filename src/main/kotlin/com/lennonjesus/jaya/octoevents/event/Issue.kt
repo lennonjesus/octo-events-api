@@ -12,3 +12,5 @@ data class Issue(
     @JsonProperty("created_at") var createdAt: String,
     @JsonProperty("updated_at") var updatedAt: String
 )
+
+// TODO ver melhor pratica para equals e hashCode em Kotlin
